@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block body %}
+    <div>
+        <h1>Menu :</h1>
+        <ul>
+            <li><a href="{{ path('front_team') }}">Équipe</a></li>
+            <li><a href="{{ path('front_dishes') }}">Cartes</a></li>
+            <li><a href="{{ path('admin_home') }}">Admin</a> </li>
+        </ul>
+    </div>
+    {{ render(controller('App\\Controller\\BlockController::dayDishes')) }}
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Team{% endblock %}
+
+{% block body %}
+    <div>
+        <h1>L'équipe :</h1>
+        {% if users %}
+            <ul style="list-style: none;">
+            {% for user in users %}
+                <li>{{ user.id }} - {{ user.firstname }} {{ user.lastname }} | {{ user.email }} | {{ user.jobtitle }}</li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>L'équipe est vide :(</p>
+        {% endif %}
+    </div>
+{% endblock %}

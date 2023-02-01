@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dishes{% endblock %}
+
+{% block body %}
+    <div>
+        <h1>Catégories de plats :</h1>
+        {% if countDishesByCategory %}
+            {% for categories in countDishesByCategory %}
+                <p><a href="/carte/{{ categories.id }}">{{ categories.Name }}</a> : {{ categories.nbDishes }}</p>
+            {% endfor %}
+        {% else %}
+            <p>Erreur. :(</p>
+        {% endif %}
+    </div>
+{% endblock %}

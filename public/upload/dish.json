@@ -1,0 +1,115 @@
+{
+  "desserts": [
+    {
+      "name":"Banana Bread",
+      "text":"Un pain moelleux à la banane et aux noix, avec des pépites de chocolat fondues.",
+      "calories":420,
+      "image":"https://picsum.photos/200",
+      "sticky":false,
+      "price": 5.50,
+      "allergens":[
+        "noix",
+        "gluten"
+      ]
+    },
+    {
+      "name":"Tarte aux fraises",
+      "text":"Une tarte croustillante et sucrée remplie de fraises juteuses et couverte de glaçage à la crème.",
+      "calories":310,
+      "image":"https://picsum.photos/200",
+      "sticky":true,
+      "price": 7.50,
+      "allergens": [
+        "gluten"
+      ]
+    },
+    {
+      "name":"Pudding chômeur",
+      "text":"Un dessert crémeux aux cerises et à la sauce caramel, servi avec une boule de crème glacée.",
+      "calories":230,
+      "image":"https://picsum.photos/200",
+      "sticky":false,
+      "price": 4.50,
+      "allergens": [
+        "lait"
+      ]
+    }
+  ],
+  "plats": [
+    {
+      "name":"Poulet rôti",
+      "text":"Un poulet entier rôti à la perfection, servi avec des pommes de terre sautées et des légumes de saison.",
+      "calories":600,
+      "image":"https://picsum.photos/200",
+      "sticky":true,
+      "price": 16.00,
+      "allergens": [
+        "gluten"
+      ]
+    },
+    {
+      "name":"Pâtes carbonara",
+      "text":"Des pâtes fraîches tossées avec du bacon, de l'ail, du parmesan et de la crème pour un délicieux plat riche en saveurs.",
+      "calories":450,
+      "image":"https://picsum.photos/200",
+      "sticky":false,
+      "price": 14.00,
+      "allergens": [
+        "lait",
+        "œufs"
+      ]
+    },
+    {
+      "name":"Tacos végétariens",
+      "text":"Des tacos farcis de haricots noirs, de laitue, de tomates, de fromage et de guacamole pour un repas sain et savoureux.",
+      "calories":400,
+      "image":"https://picsum.photos/200",
+      "sticky":true,
+      "price": 12.00,
+      "allergens": [
+        "lait",
+        "œufs",
+        "fruits à coques"
+      ]
+    }
+  ],
+  "desserts": [
+    {
+      "name":"Crème brûlée",
+      "text":"Crème douce et crémeuse sous une croûte de sucre caramélisé.",
+      "calories":360,
+      "image":"https://picsum.photos/200",
+      "sticky":false,
+      "price": 5.90,
+      "allergens": [
+        "lait",
+        "œufs"
+      ]
+    },
+    {
+      "name":"Tarte aux pommes",
+      "text":"Tarte moelleuse à base de pommes et de cannelle, recouverte d'une croûte croustillante.",
+      "calories":420,
+      "image":"https://picsum.photos/200",
+      "sticky":false,
+      "price": 4.90,
+      "allergens": [
+        "blé",
+        "pommes"
+      ]
+    },
+    {
+      "name":"Brownies",
+      "text":"Gâteau chocolaté moelleux à l'intérieur, recouvert d'un glaçage sucré et croustillant.",
+      "calories":450,
+      "image":"https://picsum.photos/200",
+      "sticky":false,
+      "price": 6.90,
+      "allergens": [
+        "lait",
+        "œufs",
+        "blé"
+      ]
+    }
+  ]
+}

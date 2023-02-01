@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dish{% endblock %}
+
+{% block body %}
+    <div>
+        <h1>Category :</h1>
+        <p>Name : {{ category.name }}</p>
+        <p> Image : {{ category.image }}</p>
+        <h1>Dishes : </h1>
+        {% for dish in dishes %}
+            <h2>Dish : {{ dish.Name }}</h2>
+            <p>Price : {{ dish.Price }}</p>
+            <p>Calories : {{ dish.Calories }}</p>
+            <p>Allergen :</p>
+            {% for allergen in dish.allergens %}
+                <p>{{ allergen.name }}</p>
+            {% endfor %}
+        {% endfor %}
+        <a href="/carte">All category</a>
+    </div>
+{% endblock %}
