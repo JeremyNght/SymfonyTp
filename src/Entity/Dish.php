@@ -45,9 +45,13 @@ class Dish
     #[ORM\ManyToMany(targetEntity: Allergen::class, inversedBy: 'dishes', cascade: ['persist'])]
     private Collection $allergen;
 
+    #[ORM\ManyToMany(targetEntity: ClientOrder::class, mappedBy: 'dishes_order')]
+    private Collection $clientOrders;
+
     public function __construct()
     {
         $this->allergen = new ArrayCollection();
+        $this->clientOrders = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -178,5 +182,32 @@ class Dish
     public function __toString(): string
     {
         return $this->getName();
+    }
+
+    /**
+     * @return Collection<int, ClientOrder>
+     */
+    public function getClientOrders(): Collection
+    {
+        return $this->clientOrders;
+    }
+
+    public function addClientOrder(ClientOrder $clientOrder): self
+    {
+        if (!$this->clientOrders->contains($clientOrder)) {
+            $this->clientOrders->add($clientOrder);
+            $clientOrder->addDishesOrder($this);
+        }
+
+        return $this;
+    }
+
+    public function removeClientOrder(ClientOrder $clientOrder): self
+    {
+        if ($this->clientOrders->removeElement($clientOrder)) {
+            $clientOrder->removeDishesOrder($this);
+        }
+
+        return $this;
     }
 }

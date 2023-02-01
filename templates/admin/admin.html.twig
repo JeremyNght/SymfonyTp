@@ -83,3 +83,14 @@
         </ul>
     </div>
 </nav>
+{% if app.user %}
+    Vous êtes connecté en tant que
+
+    {{ app.user.username }}
+{% else %}
+    Vous n'êtes pas connecté
+{% endif %}
+{% if app.user %}
+    <a href="{{ path('app_logout') }}">Déconnexion</a>
+{% endif %}
+</html>

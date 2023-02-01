@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -48,6 +50,14 @@ class User implements UserInterface
     # @var string The hashed password
     #[ORM\Column(length: 255)]
     private ?string $password = null;
+
+    #[ORM\OneToMany(mappedBy: 'serveur', targetEntity: ClientOrder::class)]
+    private Collection $serveur;
+
+    public function __construct()
+    {
+        $this->serveur = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -196,5 +206,35 @@ class User implements UserInterface
     public function getUserIdentifier(): string
     {
         return (string)$this->Username;
+    }
+
+    /**
+     * @return Collection<int, ClientOrder>
+     */
+    public function getServeur(): Collection
+    {
+        return $this->serveur;
+    }
+
+    public function addServeur(ClientOrder $serveur): self
+    {
+        if (!$this->serveur->contains($serveur)) {
+            $this->serveur->add($serveur);
+            $serveur->setServeur($this);
+        }
+
+        return $this;
+    }
+
+    public function removeServeur(ClientOrder $serveur): self
+    {
+        if ($this->serveur->removeElement($serveur)) {
+            // set the owning side to null (unless already changed)
+            if ($serveur->getServeur() === $this) {
+                $serveur->setServeur(null);
+            }
+        }
+
+        return $this;
     }
 }
